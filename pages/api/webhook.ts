@@ -6,7 +6,7 @@ import crypto from 'crypto';
 
 export const config = {
   api: {
-    bodyParser: false,
+    bodyParser: true,
   },
 };
 
