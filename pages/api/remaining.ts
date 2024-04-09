@@ -11,6 +11,7 @@ export default async function handler(
 
   if (!session || !session.user) {
     console.log('User not logged in');
+    // ToDO: write a utility to not do anything
     return res.status(401).json({ error: 'Please, login.' });
   }
 
