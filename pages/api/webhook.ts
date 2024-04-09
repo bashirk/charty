@@ -6,7 +6,7 @@ import crypto from 'crypto';
 
 // export const config = {
 //   api: {
-//     bodyParser: true,
+//     bodyParser: false,
 //   },
 // };
 
@@ -19,8 +19,7 @@ const webhookHandler = async (
 
     const eventSignature = req.headers['x-paystack-signature'];
     // const payload = JSON.stringify(req.body);
-    const eventData = req.body;
-    console.log(eventData)
+    const eventData = JSON.stringify(req.body);
 
     if (!eventData) {
       console.log('❌ Payload is undefined');
@@ -35,7 +34,8 @@ const webhookHandler = async (
       return;
     }
 
-    console.log('✅ Webhook received:', JSON.stringify(eventData));
+    console.log('✅ Webhook received:');
+    console.log(eventData)
 
     const event = req.body.event;
     const data = req.body.data;
@@ -51,25 +51,27 @@ const webhookHandler = async (
       // @ts-ignore
       switch (data.amount) {
         //using kobo count
-        case 50000:
+        case 500 * 100:
           credit_amount = 20;
           break;
-        case 200000:
+        case 2000 * 100:
           credit_amount = 100;
           break;
-        case 350000:
+        case 3500 * 100:
           credit_amount = 250;
           break;
-        case 800000:
+        case 8000 * 100:
           credit_amount = 750;
           break;
       }
 
       const row_id = await getUserIdByEmail(userEmail);
       // Update user_credits in users table after purchase
-      await addUserCredits(row_id, credit_amount);
+      // check if payment_reference doesn't already exist data.reference
+      // await addUserCredits(row_id, credit_amount);
 
-      const createdAt = new Date().toISOString();
+      // const createdAt = new Date().toISOString();
+      const createdAt = new Date(data.created_at).toISOString();
       await supabase.from('purchases').insert([
         {
           id: uuidv4(),
@@ -77,13 +79,12 @@ const webhookHandler = async (
           credit_amount: credit_amount,
           created_at: createdAt,
           status: 'success',
+          payment_reference: data.reference,
         },
       ]);
     } else {
       console.warn(`🤷‍♀️ Unhandled event type: ${event}`);
     }
-    // res.send(200);
-    // res.json({ received: true });
     res.status(200).json({ received: true });
   } else {
     res.setHeader('Allow', 'POST');
