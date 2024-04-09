@@ -20,6 +20,12 @@ const webhookHandler = async (
     const eventSignature = req.headers['x-paystack-signature'];
     const payload = JSON.stringify(req.body);
 
+    if (!payload) {
+      console.log('❌ Payload is undefined');
+      res.status(400).send('Payload is undefined');
+      return;
+    }
+
     const hash = crypto.createHmac('sha512', secret).update(payload).digest('hex');
     if (eventSignature !== hash) {
       console.log('❌ Invalid signature');
@@ -73,11 +79,10 @@ const webhookHandler = async (
     } else {
       console.warn(`🤷‍♀️ Unhandled event type: ${event}`);
     }
-    res.send(200);
-    res.json({ received: true });
+    res.status(200).json({ received: true });
   } else {
     res.setHeader('Allow', 'POST');
-    res.status(405).end('Method Not Allowed');
+    res.status(405).end('GET Method Not Allowed');
   }
 };
 
