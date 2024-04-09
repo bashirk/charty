@@ -19,21 +19,23 @@ const webhookHandler = async (
 
     const eventSignature = req.headers['x-paystack-signature'];
     const payload = JSON.stringify(req.body);
+    const eventData = req.body;
+    console.log(eventData)
 
-    if (!payload) {
+    if (!eventData) {
       console.log('❌ Payload is undefined');
       res.status(400).send('Payload is undefined');
       return;
     }
 
-    const hash = crypto.createHmac('sha512', secret).update(payload).digest('hex');
+    const hash = crypto.createHmac('sha512', secret).update(eventData).digest('hex');
     if (eventSignature !== hash) {
       console.log('❌ Invalid signature');
       res.status(400).send('Invalid signature');
       return;
     }
 
-    console.log('✅ Webhook received:', payload);
+    console.log('✅ Webhook received:', eventData);
 
     const event = req.body.event;
     const data = req.body.data;
