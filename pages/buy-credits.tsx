@@ -10,10 +10,10 @@ import { Slider } from '../components/ui/slider';
 import styles from '../styles/BuyButton.module.css';
 
 const PaystackLinks = [
-  'https://paystack.co/linka',
-  'https://paystack.co/linkb',
-  'https://paystack.co/linkc',
-  'https://paystack.co/linkd',
+  'https://paystack.com/pay/zubfy380ha', //min
+  'https://paystack.com/pay/-kylnxks08',
+  'https://paystack.com/pay/01tus9xbji',
+  'https://paystack.com/pay/o85e9hdfx1', //max
 ];
 
 const BuyButtons = [
