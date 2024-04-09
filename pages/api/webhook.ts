@@ -50,16 +50,17 @@ const webhookHandler = async (
 
       // @ts-ignore
       switch (data.amount) {
-        case 500:
+        //using kobo count
+        case 50000:
           credit_amount = 20;
           break;
-        case 2000:
+        case 200000:
           credit_amount = 100;
           break;
-        case 3500:
+        case 350000:
           credit_amount = 250;
           break;
-        case 8000:
+        case 800000:
           credit_amount = 750;
           break;
       }
