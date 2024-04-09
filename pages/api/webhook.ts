@@ -18,7 +18,7 @@ const webhookHandler = async (
     const secret = process.env.PAYSTACK_WEBHOOK_SECRET!;
 
     const eventSignature = req.headers['x-paystack-signature'];
-    const payload = JSON.stringify(req.body);
+    // const payload = JSON.stringify(req.body);
     const eventData = req.body;
     console.log(eventData)
 
@@ -41,10 +41,10 @@ const webhookHandler = async (
     const data = req.body.data;
 
     if (event === 'charge.success') {
-      const customerCode = data.customer_code;
+      const customerCode = data.customer.customer_code;
       console.log(`💵 Payment success for customer code: ${customerCode}`);
 
-      const userEmail = data.email;
+      const userEmail = data.customer.email;
       // credit_amount follows SQL naming convention in this case to comply with Supabase Stored Procedures
       let credit_amount = 0;
 

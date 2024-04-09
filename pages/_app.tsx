@@ -6,6 +6,7 @@ import { DefaultLayout } from '../components/templates/Layout';
 import '../styles/globals.css';
 import { SessionProvider } from 'next-auth/react';
 import { Session } from 'next-auth';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from 'next/script';
 
 function MyApp({ Component, pageProps }: AppProps<{ session: Session }>) {
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }: AppProps<{ session: Session }>) {
         <Script src="https://example.com/script.js" />
         <DefaultLayout>
           <Component {...pageProps} />
+          <SpeedInsights/>
         </DefaultLayout>
         <Toaster position="bottom-center" />
       </ThemeProvider>
