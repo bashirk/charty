@@ -20,7 +20,6 @@ function MyApp({ Component, pageProps }: AppProps<{ session: Session }>) {
         <Script src="https://example.com/script.js" />
         <DefaultLayout>
           <Component {...pageProps} />
-          <SpeedInsights/>
         </DefaultLayout>
         <Toaster position="bottom-center" />
       </ThemeProvider>
