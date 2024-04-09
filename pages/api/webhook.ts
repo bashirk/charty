@@ -68,7 +68,7 @@ const webhookHandler = async (
       const row_id = await getUserIdByEmail(userEmail);
       // Update user_credits in users table after purchase
       // check if payment_reference doesn't already exist data.reference
-      // await addUserCredits(row_id, credit_amount);
+      await addUserCredits(row_id, credit_amount);
 
       // const createdAt = new Date().toISOString();
       const createdAt = new Date(data.created_at).toISOString();
