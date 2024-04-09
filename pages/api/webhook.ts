@@ -34,7 +34,7 @@ const webhookHandler = async (
       return;
     }
 
-    console.log('✅ Webhook received:');
+    console.log('✅ Webhook received: \n');
     console.log(eventData)
 
     const event = req.body.event;
@@ -68,6 +68,24 @@ const webhookHandler = async (
       const row_id = await getUserIdByEmail(userEmail);
       // Update user_credits in users table after purchase
       // check if payment_reference doesn't already exist data.reference
+      // Check if payment reference already exists
+      const { data: existingPurchase, error } = await supabase
+      .from('purchases')
+      .select('payment_reference')
+      .eq('payment_reference', data.reference);
+
+      if (error) {
+      // Handle error
+      console.error('Error checking existing purchase:', error.message);
+      return res.status(500).json({ error: 'Internal server error' });
+      }
+
+      if (existingPurchase.length > 0) {
+      // If payment reference already exists, return 200 OK without updating
+      return res.status(200).json({ message: 'Credit previously allocated. Payment reference already exists' });
+      }
+
+
       await addUserCredits(row_id, credit_amount);
 
       // const createdAt = new Date().toISOString();
@@ -78,7 +96,7 @@ const webhookHandler = async (
           user_id: row_id,
           credit_amount: credit_amount,
           created_at: createdAt,
-          status: 'success',
+          status: data.status,
           payment_reference: data.reference,
         },
       ]);
