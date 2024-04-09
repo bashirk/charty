@@ -28,7 +28,7 @@ const webhookHandler = async (
       return;
     }
 
-    const hash = crypto.createHmac('sha512', secret).update(JSON.stringify(eventData)).digest('hex');
+    const hash = crypto.createHmac('sha512', secret).update(JSON.stringify(req.body)).digest('hex');
     if (eventSignature !== hash) {
       console.log('❌ Invalid signature');
       res.status(400).send('Invalid signature');
@@ -81,7 +81,9 @@ const webhookHandler = async (
     } else {
       console.warn(`🤷‍♀️ Unhandled event type: ${event}`);
     }
-    res.status(200).json({ received: true });
+    res.send(200);
+    res.json({ received: true });
+    // res.status(200).json({ received: true });
   } else {
     res.setHeader('Allow', 'POST');
     res.status(405).end('GET Method Not Allowed');
