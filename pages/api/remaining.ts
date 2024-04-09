@@ -7,7 +7,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const session = await getSession({ req });
-  console.log(session)
+  // console.log(session)
 
   if (!session || !session.user) {
     console.log('User not logged in');

@@ -32,7 +32,7 @@ const webhookHandler = async (
     const event = req.body.event;
     const data = req.body.data;
 
-    if (event === 'payment.success') {
+    if (event === 'charge.success') {
       const customerCode = data.customer_code;
       console.log(`💵 Payment success for customer code: ${customerCode}`);
 
