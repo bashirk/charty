@@ -4,11 +4,11 @@ import { supabase } from '../../lib/supabase';
 import { v4 as uuidv4 } from 'uuid';
 import crypto from 'crypto';
 
-export const config = {
-  api: {
-    bodyParser: true,
-  },
-};
+// export const config = {
+//   api: {
+//     bodyParser: true,
+//   },
+// };
 
 const webhookHandler = async (
   req: NextApiRequest,
@@ -28,14 +28,14 @@ const webhookHandler = async (
       return;
     }
 
-    const hash = crypto.createHmac('sha512', secret).update(eventData).digest('hex');
+    const hash = crypto.createHmac('sha512', secret).update(JSON.stringify(eventData)).digest('hex');
     if (eventSignature !== hash) {
       console.log('❌ Invalid signature');
       res.status(400).send('Invalid signature');
       return;
     }
 
-    console.log('✅ Webhook received:', eventData);
+    console.log('✅ Webhook received:', JSON.stringify(eventData));
 
     const event = req.body.event;
     const data = req.body.data;
