@@ -66,8 +66,6 @@ const webhookHandler = async (
       }
 
       const row_id = await getUserIdByEmail(userEmail);
-      // Update user_credits in users table after purchase
-      // check if payment_reference doesn't already exist data.reference
       // Check if payment reference already exists
       const { data: existingPurchase, error } = await supabase
       .from('purchases')
@@ -85,7 +83,7 @@ const webhookHandler = async (
       return res.status(200).json({ message: 'Credit previously allocated. Payment reference already exists' });
       }
 
-
+      // Update user_credits in users table after purchase
       await addUserCredits(row_id, credit_amount);
 
       // const createdAt = new Date().toISOString();
