@@ -11,6 +11,7 @@ import styles from '../styles/BuyButton.module.css';
 
 const PaystackLinks = [
   'https://paystack.com/pay/zubfy380ha', //min
+  // `https://paystack.com/pay/zubfy380ha?email=${encodeURIComponent(gsession.user.email)}`, //min
   'https://paystack.com/pay/-kylnxks08',
   'https://paystack.com/pay/01tus9xbji',
   'https://paystack.com/pay/o85e9hdfx1', //max
