@@ -82,9 +82,9 @@ const webhookHandler = async (
     } else {
       console.warn(`🤷‍♀️ Unhandled event type: ${event}`);
     }
-    res.send(200);
-    res.json({ received: true });
-    // res.status(200).json({ received: true });
+    // res.send(200);
+    // res.json({ received: true });
+    res.status(200).json({ received: true });
   } else {
     res.setHeader('Allow', 'POST');
     res.status(405).end('GET Method Not Allowed');
