@@ -74,7 +74,7 @@ export const DefaultLayout: FC<PropsWithChildren> = ({ children }) => {
       const cookies = parse(document.cookie);
 
       if (!cookies.chart_generations) {
-        document.cookie = `chart_generations=3;path=/;max-age=${
+        document.cookie = `chart_generations=0;path=/;max-age=${
           60 * 60 * 24 * 7
         };samesite=lax`;
       }
@@ -109,12 +109,10 @@ export const DefaultLayout: FC<PropsWithChildren> = ({ children }) => {
 
         <div className="flex items-center space-x-1">
           {creditsRemaining !== undefined && (
-            <Link href="/buy-credits">
               <Balance
                 creditsRemaining={creditsRemaining}
                 creditsLoading={isLoading}
               />
-            </Link>
           )}
           <ThemeButton />
           <SignIn />

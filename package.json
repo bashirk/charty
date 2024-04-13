@@ -1,17 +1,11 @@
 {
-  "name": "chartgpt",
+  "name": "tryelly",
   "version": "0.1.0",
   "private": true,
   "author": {
-    "name": "Kate Reznykova",
-    "twitter": "@whoiskatrin"
+    "name": "Korede Bashir",
+    "twitter": "@codecog"
   },
-  "contributors": [
-    {
-      "name": "Makenna Smutz",
-      "twitter": "@KenzSmutz"
-    }
-  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -44,7 +38,7 @@
     "aws-sdk": "^2.1359.0",
     "bard-ai": "^1.2.0",
     "camelcase": "^7.0.1",
-    "class-variance-authority": "^0.6.0",
+    "class-variance-authority": "^0.7.0",
     "clsx": "^1.2.1",
     "eslint-config-next": "^13.4.1",
     "eventsource-parser": "^0.0.5",

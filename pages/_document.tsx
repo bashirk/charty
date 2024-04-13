@@ -8,34 +8,34 @@ export default function Document() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="UTF-8" />
 
-        <title>ChartGPT</title>
-        <meta property="og:title" content="ChartGPT" />
+        <title>TryElly</title>
+        <meta property="og:title" content="TryElly" />
         <meta
           property="og:image"
-          content="https://www.chartgpt.dev/chartgpt-og.png"
+          content="https://www.TryElly-ai.vercel.app/tryelly-og.png"
         />
-        <meta property="og:url" content="https://www.chartgpt.dev" />
+        <meta property="og:url" content="https://www.elly-ai.vercel.app" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_GB" />
         <meta
           property="og:description"
-          content="A tool that converts text into beautiful charts"
+          content="Pitch with confidence! Get valid data with actual presentations"
         />
         <meta
           name="description"
-          content="A tool that converts text into beautiful charts"
+          content="Pitch with confidence! Get valid data with actual presentations"
         />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@whoiskatrin" />
-        <meta name="twitter:title" content="ChartGPT - text to charts" />
+        <meta name="twitter:site" content="@codecoggy" />
+        <meta name="twitter:title" content="TryElly - human language to confident presentations" />
         <meta
           name="twitter:description"
-          content="A tool that converts text into beautiful charts"
+          content="Pitch with confidence! Get valid data with actual presentations"
         />
         <meta
           name="twitter:image"
-          content="https://www.chartgpt.dev/chartgpt-og.png"
+          content="https://www..elly-ai.vercel.app/elly-og.png"
         />
       </Head>
 

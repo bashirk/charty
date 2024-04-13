@@ -25,7 +25,6 @@ import { getSession } from 'next-auth/react';
 import Link from 'next/link';
 import React, { useCallback, useMemo, useState } from 'react';
 import Chart from '../components/ChartComponent';
-import Github from '../components/GitHub';
 import LoadingDots from '../components/LoadingDots';
 import { GreenOrb, OrangeOrb, WhiteOrb } from '../components/atoms/Orbs';
 import { IconColor, Select } from '../components/atoms/Select';
@@ -181,22 +180,15 @@ const NewHome: NextPage = () => {
               }
             }}
           />
-          <Button
-            type="submit"
-            form="generate-chart"
-            className="w-full cursor-pointer py-2 px-4 mt-4 rounded-full blue-button-w-gradient-border [text-shadow:0_0_1px_rgba(0,0,0,0.25)] shadow-2xl items-center justify-center false"
-            icon={PencilSquareIcon}
-          >
-            Draw
-          </Button>
 
-          <div className="py-2">
+            {/* divider component to break sections with gaps */}
+          {/* <div className="py-2">
             <Divider className="h-px dark:bg-black" />
-          </div>
+          </div> */}
 
-          <SectionHeader stepNumber={2} title="Make any tweaks to the chart" />
+          <SectionHeader stepNumber={2} title="Use the options below to adjust your chart presentation" />
           <div>
-            <Text className="mb-1 dark:text-zinc-400">Chart type</Text>
+            <Text className="mb-1 dark:text-zinc-400">Select your chart style</Text>
             <Select
               name="chart-type"
               value={chartType}
@@ -267,49 +259,20 @@ const NewHome: NextPage = () => {
               setChecked={setShowLegend}
             />
           </div>
+          
+          <Button
+            type="submit"
+            form="generate-chart"
+            className="w-full cursor-pointer py-2 px-4 mt-4 rounded-full blue-button-w-gradient-border [text-shadow:0_0_1px_rgba(0,0,0,0.25)] shadow-2xl items-center justify-center false"
+            icon={PencilSquareIcon}
+          >
+            Draw
+          </Button>
         </form>
       </aside>
 
       <Col numColSpan={1} numColSpanSm={2} numColSpanMd={2} className="h-full">
-        <a
-          href="https://www.usechannel.com/?utm_source=chart-gpt&utm_medium=website-advert&utm_campaign=july-sponsorshiphttps://www.usechannel.com/?utm_source=chart-gpt&utm_medium=website-advert&utm_campaign=july-sponsorship"
-          target="_blank"
-        >
-          <div className="w-full flex flex-col md:flex-row gap-3 items-center md:justify-between justify-center p-4 border border-zinc-200 dark:border-zinc-900 dark:bg-black bg-white mb-2 rounded-md hover:saturate-150 transition-all relative overflow-hidden">
-            <WhiteOrb />
-            <GreenOrb />
-            <OrangeOrb />
-            <p className="md:text-center text-lg">
-              Connect your{' '}
-              <span className="font-bold text-orange-500">database</span> and{' '}
-              <wbr />
-              answer your{' '}
-              <span className="font-bold text-orange-500">
-                business questions
-              </span>
-              .
-            </p>
-            <Button color="orange">Ask a question</Button>
-          </div>
-        </a>
         <div className="bg-zinc-100 h-fit sm:h-[calc(100%-100px)] rounded-md py-12 lg:py-4 px-4 border border-zinc-200 dark:border-zinc-900 dark:bg-black dot-grid-gradient-light dark:dot-grid-gradient-dark flex justify-center items-center relative">
-          <div className="flex absolute top-4 left-4">
-            <a
-              href="https://github.com/whoiskatrin/chart-gpt"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <Button
-                size="xs"
-                color="zinc"
-                variant="secondary"
-                icon={Github}
-                className="dark:hover:bg-zinc-500/25 dark:text-zinc-100 rounded-full flex items-center justify-center text-sm font-medium px-4 py-1 text-black bg-white dark:bg-black"
-              >
-                Star on GitHub
-              </Button>
-            </a>
-          </div>
 
           {error ? (
             <Callout
