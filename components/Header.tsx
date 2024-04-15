@@ -35,7 +35,7 @@ export const Header = () => {
       <div className="flex items-center gap-3 pt-4">
         <a
           className="rounded-full text-gray-500 dark:text-gray-400"
-          href="https://github.com/whoiskatrin/chart-gpt"
+          href="https://github.com/bashirk/ellyai"
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -48,7 +48,7 @@ export const Header = () => {
         </a>
         <a
           className={`flex items-center justify-center space-x-2 py-2 px-6 rounded-full ${btnBgColor} text-black text-sm font-medium transition`}
-          href="https://twitter.com/whoiskatrin"
+          href="https://twitter.com/codecog"
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -69,7 +69,7 @@ export const Header = () => {
         </a>
         <a
           className="rounded-full text-gray-500 dark:text-gray-400"
-          href="https://github.com/whoiskatrin/chart-gpt"
+          href="https://github.com/bashirk/ellyai"
           rel="noopener noreferrer"
           target="_blank"
         >
