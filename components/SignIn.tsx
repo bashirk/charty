@@ -1,5 +1,5 @@
 import {
-  ArrowRightOnRectangleIcon,
+  ArrowLeftOnRectangleIcon,
   ChevronDownIcon,
   CurrencyDollarIcon,
 } from '@heroicons/react/24/outline';
@@ -42,7 +42,7 @@ const SignIn = ({
               size="xs"
               className="rounded-full font-sans items-center justify-center text-sm font-medium px-4 py-1 blue-button-w-gradient-border hidden sm:flex"
             >
-              Buy credits
+              Buy Tokens
             </Button>
           </Link>
         )}
@@ -73,18 +73,18 @@ const SignIn = ({
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>
-              Signed in as {session.user?.name}
+              Logged in as {session.user?.name}
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <Link href="/buy-credits">
               <DropdownMenuItem>
                 <CurrencyDollarIcon className="mr-2 h-4 w-4" />
-                <span>Buy credits</span>
+                <span>Buy Tokens</span>
               </DropdownMenuItem>
             </Link>
             <DropdownMenuItem onClick={() => handleSignOut()}>
-              <ArrowRightOnRectangleIcon className="mr-2 h-4 w-4" />
-              <span>Sign out</span>
+              <ArrowLeftOnRectangleIcon className="mr-2 h-4 w-4" />
+              <span>Log Out</span>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
@@ -97,7 +97,7 @@ const SignIn = ({
         size="xs"
         className="rounded-full font-sans flex items-center justify-center text-sm font-medium px-4 py-1 blue-button-w-gradient-border"
       >
-        Sign in with Google
+        Login with Google
       </Button>
     );
   }

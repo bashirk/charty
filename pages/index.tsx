@@ -154,6 +154,7 @@ const NewHome: NextPage = () => {
   };
 
   return (
+    <div className="dark:bg-[#0c2b35] dark:bg-[radial-gradient(#0c2b35_1px,#000000_1px)] bg-[size:20px_20px]">
     <Grid
       numCols={1}
       numColsSm={2}
@@ -188,31 +189,31 @@ const NewHome: NextPage = () => {
 
           <SectionHeader stepNumber={2} title="Use the options below to adjust your chart presentation" />
           <div>
-            <Text className="mb-1 dark:text-zinc-400">Select your chart style</Text>
+            <Text className="text-black-500 mb-1 dark:text-zinc-400">Select your chart style</Text>
             <Select
               name="chart-type"
               value={chartType}
               onValueChange={setChartType}
               items={[
-                { value: 'bar', textValue: 'Bar Chart' },
-                { value: 'area', textValue: 'Area Chart' },
-                { value: 'line', textValue: 'Line Chart' },
-                { value: 'composed', textValue: 'Composed Chart' },
                 { value: 'pie', textValue: 'Pie Chart' },
                 { value: 'scatter', textValue: 'Scatter Chart' },
                 { value: 'radar', textValue: 'Radar Chart' },
                 { value: 'radialbar', textValue: 'Radial Bar Chart' },
                 { value: 'treemap', textValue: 'Treemap' },
                 { value: 'funnel', textValue: 'Funnel Chart' },
+                { value: 'bar', textValue: 'Bar Chart' },
+                { value: 'area', textValue: 'Area Chart' },
+                { value: 'line', textValue: 'Line Chart' },
+                { value: 'composed', textValue: 'Composed Chart' },
               ]}
             />
           </div>
           <div>
             <label
               htmlFor="title"
-              className="text-zinc-500 dark:text-zinc-400 text-sm font-normal select-none	mb-3"
+              className="text-black-500 dark:text-zinc-400 text-sm font-normal select-none	mb-3"
             >
-              Color
+              Set Color
             </label>
             <Select
               value={chartColor as Color}
@@ -220,10 +221,10 @@ const NewHome: NextPage = () => {
               leftIcon={SwatchIcon}
               leftIconColor={chartColor as IconColor}
               items={[
-                { value: 'blue', textValue: 'Blue' },
-                { value: 'purple', textValue: 'Purple' },
                 { value: 'green', textValue: 'Green' },
                 { value: 'pink', textValue: 'Pink' },
+                { value: 'blue', textValue: 'Blue' },
+                { value: 'purple', textValue: 'Purple' },
                 { value: 'yellow', textValue: 'Yellow' },
               ]}
             />
@@ -232,9 +233,9 @@ const NewHome: NextPage = () => {
           <div className="flex justify-between w-full">
             <label
               htmlFor="title"
-              className="text-zinc-500 dark:text-zinc-400 text-sm font-normal select-none	"
+              className="text-black-500 dark:text-zinc-400 text-sm font-normal select-none	"
             >
-              Show chart Title
+              Include Title
             </label>
             <Toggle
               id="title"
@@ -247,9 +248,9 @@ const NewHome: NextPage = () => {
           <div className="flex justify-between w-full pb-6">
             <label
               htmlFor="legend"
-              className="text-zinc-500 dark:text-zinc-400 text-sm font-normal select-none"
+              className="text-black-500 dark:text-zinc-400 text-sm font-normal select-none"
             >
-              Show chart Legend
+              Include Legend
             </label>
             <Toggle
               id="legend"
@@ -272,8 +273,10 @@ const NewHome: NextPage = () => {
       </aside>
 
       <Col numColSpan={1} numColSpanSm={2} numColSpanMd={2} className="h-full">
-        <div className="bg-zinc-100 h-fit sm:h-[calc(100%-100px)] rounded-md py-12 lg:py-4 px-4 border border-zinc-200 dark:border-zinc-900 dark:bg-black dot-grid-gradient-light dark:dot-grid-gradient-dark flex justify-center items-center relative">
-
+      {/* original css */}
+      {/* <div className="bg-zinc-100 h-fit sm:h-[calc(100%-100px)] rounded-md py-12 lg:py-4 px-4 border border-zinc-200 dark:border-zinc-900 dark:bg-black dot-grid-gradient-light dark:dot-grid-gradient-dark flex justify-center items-center relative"> */}
+      <div className="relative h-full w-full bg-zinc dark:bg-black">
+      <div className="bg-zinc-100 dark:bg-black h-fit sm:h-[calc(100%-100px)] rounded-md py-12 lg:py-4 px-4 border border-zinc-200 dark:border-zinc-900 flex justify-center items-center relative">
           {error ? (
             <Callout
               className="my-6"
@@ -381,13 +384,15 @@ const NewHome: NextPage = () => {
                 className="dark:bg-white dark:hover:bg-zinc-200 dark:text-zinc-900 outline-none"
                 onClick={() => handleDownloadClick('#chart-card')}
               >
-                Download
+                Download as image
               </Button>
             )}
-          </div>
-        </div>
+          </div> 
+      </div>
+  </div>
       </Col>
     </Grid>
+  </div>
   );
 };
 

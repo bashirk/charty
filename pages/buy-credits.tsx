@@ -134,7 +134,7 @@ export default function Pricing() {
           value={credits}
           onValueChange={setCredits}
         />
-        {/* TODO: Handle the scenario of logged out, need to prompt to sign in */}
+        {/* TODO: Handle the scenario of logged out, need to prompt to log in */}
         {session && button}
       </div>
 
