@@ -25,10 +25,10 @@ export const Balance: FC<BalanceProps> = ({
   return (
     <>
       <Badge className="font-sans font-medium sm:hidden flex">
-        {creditsRemaining} Credits
+        {creditsRemaining} credits
       </Badge>
       <Badge className="font-sans font-medium hidden sm:flex">
-        {creditsRemaining} Remaining credits
+        {creditsRemaining} credits
       </Badge>
     </>
   );

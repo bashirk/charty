@@ -1,7 +1,7 @@
 import {
   ArrowRightOnRectangleIcon,
   ChevronDownIcon,
-  CreditCardIcon,
+  CurrencyDollarIcon,
 } from '@heroicons/react/24/outline';
 import { Button } from '@tremor/react';
 import { signIn, signOut, useSession } from 'next-auth/react';
@@ -67,7 +67,7 @@ const SignIn = ({
                   </AvatarFallback>
                 </Avatar>
               ) : (
-                (session.user?.name || session.user?.email || 'User').charAt(0)
+                (session.user?.name || session.user?.email || 'Jane Doe').charAt(0)
               )}
             </Button>
           </DropdownMenuTrigger>
@@ -78,7 +78,7 @@ const SignIn = ({
             <DropdownMenuSeparator />
             <Link href="/buy-credits">
               <DropdownMenuItem>
-                <CreditCardIcon className="mr-2 h-4 w-4" />
+                <CurrencyDollarIcon className="mr-2 h-4 w-4" />
                 <span>Buy credits</span>
               </DropdownMenuItem>
             </Link>
