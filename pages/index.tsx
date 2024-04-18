@@ -307,19 +307,17 @@ const NewHome: NextPage = () => {
             <div className="w-full max-w-full p-3 md:p-4">
               {!isLoading && !shouldRenderChart && selectedIndex !== 1 ? (
                 <div className="text-left font-medium text-sm max-w-fit mx-auto">
-                  Some ideas to try:
+                  Examples:
                   <ul className="list-disc list-inside">
                     <li className="text-zinc-500 dark:text-zinc-400 text-sm font-normal ">
-                      Top 3 market leaders in the sneaker industry by millions
+                      Top 3 market leaders in the African content creator space by thousands
                       in market share
                     </li>
                     <li className="text-zinc-500 dark:text-zinc-400 text-sm font-normal ">
-                      Distribution of renewable energy sources in the United
-                      States by percentage
+                      Distribution of agriculture produce in Nigeria by percentage
                     </li>
                     <li className="text-zinc-500 dark:text-zinc-400 text-sm font-normal ">
-                      Average annual rainfall in major cities around the world
-                      in cm
+                      Average annual crop waste in major cities around Sub-Sahara Africa in kg
                     </li>
                   </ul>
                 </div>
