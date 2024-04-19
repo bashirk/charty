@@ -64,13 +64,13 @@ const CHART_TYPES = [
 const NewHome: NextPage = () => {
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [chartType, setChartType] = useState('bar');
+  const [chartType, setChartType] = useState('pie');
   const [chartData, setChartData] = useState([]);
   const [error, setError] = useState(false);
   const [shouldRenderChart, setShouldRenderChart] = useState(false);
   const [showTitle, setShowTitle] = useState(true);
   const [showLegend, setShowLegend] = useState(true);
-  const [chartColor, setChartColor] = useState<Color>('blue');
+  const [chartColor, setChartColor] = useState<Color>('purple');
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [dataSource, setDataSource] = useState('Statista');
 
@@ -290,7 +290,7 @@ const NewHome: NextPage = () => {
                     href="/buy-credits"
                     className="hover:text-red-500 underline decoration-dotted underline-offset-2 mx-1"
                   >
-                    Credits
+                    tokens
                   </Link>
                 </li>
                 <li>Try modifying the prompt, make it as clear as possible </li>

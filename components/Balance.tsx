@@ -12,7 +12,7 @@ export const Balance: FC<BalanceProps> = ({
 }) => {
   if (creditsLoading) {
     return (
-      <div>Loading...</div> // replace with your loading state
+      <div>Please wait...</div> // replace with your loading state
     );
   }
 
@@ -25,10 +25,10 @@ export const Balance: FC<BalanceProps> = ({
   return (
     <>
       <Badge className="font-sans font-medium sm:hidden flex">
-        {creditsRemaining} credits
+        {creditsRemaining} tokens
       </Badge>
       <Badge className="font-sans font-medium hidden sm:flex">
-        {creditsRemaining} credits
+        {creditsRemaining} tokens
       </Badge>
     </>
   );

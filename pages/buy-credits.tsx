@@ -86,31 +86,31 @@ export default function Pricing() {
   return (
     <div className="flex mx-auto max-w-7xl overflow-visible flex-col items-center justify-center">
       <Head>
-        <title>Get TryElly Credits</title>
+        <title>Get TryElly Tokens</title>
       </Head>
       <Script src="https://cdn.paritydeals.com/banner.js" />
       <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4">
         <h1 className="mx-auto max-w-4xl text-center text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl">
-          Get TryElly Credits
+          Get TryElly Tokens
         </h1>
         <Title className="text-zinc-500 dark:text-zinc-400 font-normal mt-6">
           You currently have{' '}
           <span className="font-semibold text-zinc-900 dark:text-white">
             {data?.remainingGenerations}{' '}
             {data?.remainingGenerations > 1 || data?.remainingGenerations === 0
-              ? 'credits'
-              : 'credit'}
+              ? 'tokens'
+              : 'token'}
           </span>
-          . Purchase more below.
+          . Get more below.
         </Title>
       </main>
 
       <Title className="dark:text-zinc-200 my-6">
-        How many extra credits do you need?
+        How many extra tokens do you need?
       </Title>
       <div>
         <div className="flex items-baseline space-x-2">
-          <Metric className="dark:text-zinc-100">{credits} credits</Metric>
+          <Metric className="dark:text-zinc-100">{credits} tokens</Metric>
           <Subtitle className="dark:text-zinc-400">
             $
             {credits[0] <= 20
@@ -139,7 +139,7 @@ export default function Pricing() {
       </div>
 
       <Card className="max-w-[400px] dark:bg-black dark:ring-zinc-800 mt-16">
-        <Title className="dark:text-white">What’s included?</Title>
+        <Title className="dark:text-white">What’s do you get?</Title>
         <ul className="space-y-2 mt-3">
           <li>
             <Icon
@@ -150,7 +150,7 @@ export default function Pricing() {
               className="mr-2 dark:bg-emerald-300/20"
             />
             <span className="text-zinc-600 dark:text-zinc-400 dark:text-zinc text-base font-normal">
-              Open source interface
+              Beautiful visualizations
             </span>
           </li>
           <li>
@@ -162,7 +162,7 @@ export default function Pricing() {
               className="mr-2 dark:bg-emerald-300/20"
             />
             <span className="text-zinc-600 dark:text-zinc-400 dark:text-zinc text-base font-normal">
-              .PNG download
+            Download visualizations in .PNG
             </span>
           </li>
           <li>
@@ -174,7 +174,22 @@ export default function Pricing() {
               className="mr-2 dark:bg-emerald-300/20"
             />
             <span className="text-zinc-600 dark:text-zinc-400 dark:text-zinc text-base font-normal">
-              PowerPoint exports
+              Download visualizations in .GIF
+            </span>
+            <span className="ml-1 text-zinc-400 dark:text-zinc-500 text-base font-normal italic">
+              (coming soon)
+            </span>
+          </li>
+          <li>
+            <Icon
+              icon={CheckCircleIcon}
+              variant="light"
+              size="xs"
+              color="emerald"
+              className="mr-2 dark:bg-emerald-300/20"
+            />
+            <span className="text-zinc-600 dark:text-zinc-400 dark:text-zinc text-base font-normal">
+              Google Slides exports
             </span>
             <span className="ml-1 text-zinc-400 dark:text-zinc-500 text-base font-normal italic">
               (coming soon)
