@@ -19,11 +19,11 @@ export default function Document() {
         <meta property="og:locale" content="en_GB" />
         <meta
           property="og:description"
-          content="Pitch with confidence! Get access to valid data with beautiful visualiztions"
+          content="Pitch with confidence! Get access to valid data with beautiful visualizations"
         />
         <meta
           name="description"
-          content="Pitch with confidence! Get access to valid data with beautiful visualiztions"
+          content="Pitch with confidence! Get access to valid data with beautiful visualizations"
         />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -31,7 +31,7 @@ export default function Document() {
         <meta name="twitter:title" content="Elly AI - human language to confident presentations" />
         <meta
           name="twitter:description"
-          content="Pitch with confidence! Get access to valid data with beautiful visualiztions"
+          content="Pitch with confidence! Get access to valid data with beautiful visualizations"
         />
         <meta
           name="twitter:image"
