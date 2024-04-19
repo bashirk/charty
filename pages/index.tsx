@@ -170,7 +170,7 @@ const NewHome: NextPage = () => {
           <TextArea
             id="input"
             name="prompt"
-            placeholder="Show me a bar chart with COVID-19 cases in London in March 2020..."
+            placeholder="Show me a bar chart with COVID-19 cases in Ondo in November 2020..."
             value={inputValue}
             required
             autoFocus

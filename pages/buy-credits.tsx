@@ -86,12 +86,12 @@ export default function Pricing() {
   return (
     <div className="flex mx-auto max-w-7xl overflow-visible flex-col items-center justify-center">
       <Head>
-        <title>Get TryElly Tokens</title>
+        <title>Get Elly AI Tokens</title>
       </Head>
       <Script src="https://cdn.paritydeals.com/banner.js" />
       <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4">
         <h1 className="mx-auto max-w-4xl text-center text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl">
-          Get TryElly Tokens
+          Get Elly AI Tokens
         </h1>
         <Title className="text-zinc-500 dark:text-zinc-400 font-normal mt-6">
           You currently have{' '}
@@ -139,7 +139,7 @@ export default function Pricing() {
       </div>
 
       <Card className="max-w-[400px] dark:bg-black dark:ring-zinc-800 mt-16">
-        <Title className="dark:text-white">What’s do you get?</Title>
+        <Title className="dark:text-white">What do you get?</Title>
         <ul className="space-y-2 mt-3">
           <li>
             <Icon

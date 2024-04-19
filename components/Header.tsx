@@ -29,7 +29,7 @@ export const Header = () => {
           ChartGPT
         </h1>
         <p className="font-sans font-bold bg-white text-black dark:text-white dark:bg-black">
-          A tool that converts text queries into beautiful charts using AI
+          A tool that converts queries in human language into beautiful visualizations using AI
         </p>
       </Link>
       <div className="flex items-center gap-3 pt-4">
