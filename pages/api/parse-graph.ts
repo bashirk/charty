@@ -137,20 +137,20 @@ export default async function handler(
       }
     }
     // Log the conversation using the Context API
-    await context.log.conversation({
-      body: {
-        conversation: {
-          messages: [
-            { message: prompt, role: KnownMessageRole.User, rating: 0 },
-            {
-              message: outputData,
-              role: KnownMessageRole.Assistant,
-              rating: 1,
-            },
-          ],
-        },
-      },
-    });
+    // await context.log.conversation({
+    //   body: {
+    //     conversation: {
+    //       messages: [
+    //         { message: prompt, role: KnownMessageRole.User, rating: 0 },
+    //         {
+    //           message: outputData,
+    //           role: KnownMessageRole.Assistant,
+    //           rating: 1,
+    //         },
+    //       ],
+    //     },
+    //   },
+    // });
     res.status(200).json(outputData);
   } catch (error) {
     console.error(error);

@@ -7,6 +7,7 @@ import Script from 'next/script';
 import { useEffect, useState } from 'react';
 import useSWR from 'swr';
 import { Slider } from '../components/ui/slider';
+import ShinyButton from '../components/ui/ShinyButton';
 import styles from '../styles/BuyButton.module.css';
 
 const PaystackLinks = [
@@ -48,33 +49,28 @@ export default function Pricing() {
   };
 
   const [button, setButton] = useState<JSX.Element | null>(
-    <a href={PaystackLinks[1]} target="_blank" rel="noopener noreferrer" 
-        className={`${styles.buyButton} ${isClicked ? styles.clicked : ''}`} onClick={handleClick}>
-      Buy Now
+    <a href={PaystackLinks[0]} target="_blank" rel="noopener noreferrer">
+    <ShinyButton />
     </a>
   );
 
   useEffect(() => {
     setButton(
       credits[0] <= 20 ? (
-        <a href={PaystackLinks[0]} target="_blank" rel="noopener noreferrer" 
-            className={`${styles.buyButton} ${isClicked ? styles.clicked : ''}`} onClick={handleClick}>
-          Buy Now
+        <a href={PaystackLinks[0]} target="_blank" rel="noopener noreferrer">
+        <ShinyButton />
         </a>
       ) : credits[0] <= 100 ? (
-        <a href={PaystackLinks[1]} target="_blank" rel="noopener noreferrer" 
-            className={`${styles.buyButton} ${isClicked ? styles.clicked : ''}`} onClick={handleClick}>
-          Buy Now
+        <a href={PaystackLinks[1]} target="_blank" rel="noopener noreferrer" onClick={handleClick}>
+        <ShinyButton />
         </a>
       ) : credits[0] <= 250 ? (
-        <a href={PaystackLinks[2]} target="_blank" rel="noopener noreferrer" 
-            className={`${styles.buyButton} ${isClicked ? styles.clicked : ''}`} onClick={handleClick}>
-          Buy Now
+        <a href={PaystackLinks[2]} target="_blank" rel="noopener noreferrer" onClick={handleClick}>
+          <ShinyButton />
         </a>
       ) : credits[0] <= 750 ? (
-        <a href={PaystackLinks[3]} target="_blank" rel="noopener noreferrer" 
-            className={`${styles.buyButton} ${isClicked ? styles.clicked : ''}`} onClick={handleClick}>
-          Buy Now
+        <a href={PaystackLinks[3]} target="_blank" rel="noopener noreferrer" onClick={handleClick}>
+          <ShinyButton />
         </a>
       ) : null
     );
