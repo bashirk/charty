@@ -28,14 +28,14 @@ export default function Document() {
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@codecoggy" />
-        <meta name="twitter:title" content="Elly AI - human language to confident presentations" />
+        <meta name="twitter:title" content="Elly AI - human language to confident business intelligence" />
         <meta
           name="twitter:description"
           content="Pitch with confidence! Get access to valid data with beautiful visualizations"
         />
         <meta
           name="twitter:image"
-          content="https://www..elly-ai.vercel.app/elly-og.png"
+          content="https://elly-ai.vercel.app/elly-og.png"
         />
       </Head>
 
